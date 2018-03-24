@@ -1,0 +1,28 @@
+.header {
+    background-color: $theme-color;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    ul {
+        padding: 0;
+    }
+    
+    li {
+        display: inline-block;
+        list-style: none;
+        padding: 10px;
+    }
+    
+    a {
+        color: $text-reverse;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        
+        &.is-active {
+            text-decoration: underline;
+        }
+    }
+}
