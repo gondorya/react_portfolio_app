@@ -1,0 +1,13 @@
+.portfolioItem {
+    width: 33vw;
+    margin: 0 15px;
+    display: inline-block;
+
+    &__image {
+        width: calc(33vw - 31px);
+        height: calc(33vw - 31px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}

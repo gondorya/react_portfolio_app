@@ -1,8 +1,9 @@
 import React from 'react';
+import PhotoList from './PhotoList';
 
 const HomePage = () => (
     <div>
-        Homepage
+        <PhotoList/>
     </div>
 );
 
