@@ -2,3 +2,11 @@ body {
     background-color: $theme-background;
     font-family: Helvetica, Arial, sans-serif;
 }
+
+.container {
+    padding: 0 15px;
+}
+
+.row {
+    margin: 0 -15px;
+}

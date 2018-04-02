@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import Header from './../components/Header';
 import NotFoundPage from './../components/404';
 import HomePage from './../components/HomePage';
+import AddPhoto from './../components/AddPhotoPage';
 import PortfolioItem from './../components/PortfolioItem';
 import Portfolio from './../components/Portfolio';
 import Contact from './../components/Contact';
@@ -13,6 +14,7 @@ const AppRouter = () => (
             <Header />
             <Switch>
                 <Route path="/" component={HomePage} exact={true}/>
+                <Route path="/add_photo" component={AddPhoto} exact={true}/>
                 <Route path="/portfolio" component={Portfolio} exact={true}/>
                 <Route path="/portfolio/:id" component={PortfolioItem} exact={true}/>
                 <Route path="/contact" component={Contact}/>
