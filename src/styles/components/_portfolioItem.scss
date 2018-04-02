@@ -1,7 +1,9 @@
 .portfolioItem {
     width: 33vw;
-    margin: 0 15px;
+    padding: 0 15px;
     display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
 
     &__image {
         width: calc(33vw - 31px);
@@ -9,5 +11,21 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+    }
+    
+    &__date {
+        float: left;
+        margin: 0;
+        line-height: 21px;
+    }
+    
+    &__details {
+        margin: 5px 0;
+        
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
     }
 }

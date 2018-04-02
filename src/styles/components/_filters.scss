@@ -1,0 +1,16 @@
+.filters {
+    padding: 15px;
+    
+    &__input {
+        background: rgba($white, 0.4);
+        border: 1px solid $theme-color;
+        padding: 5px;
+    }
+    
+    &__select {
+        margin-left: 15px;
+        background: rgba($white, 0.4);
+        border: 1px solid $theme-color;
+        padding: 5px;
+    }
+}

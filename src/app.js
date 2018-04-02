@@ -29,8 +29,6 @@ const aPhoto = store.dispatch(addPhoto({
     imgUrl: 'https://deltadailynews.com/wp-content/uploads/2016/06/ddn-duck.jpg',
     createdAt: 24568,
 }));
-store.dispatch(setTitleFilter('duck'));
-store.dispatch(sortByTitle());
 
 const state = store.getState();
 const visiblePhotos = selectors(state.photos, state.filters);
