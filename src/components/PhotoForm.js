@@ -12,7 +12,8 @@ export default class PhotoForm extends React.Component {
         description: '',
         imgUrl: '',
         createdAt: moment(),
-        calendarFocused: false
+        calendarFocused: false,
+        error: false
     };
     onTitleChange = (e) => {
         const title = e.target.value;
@@ -27,17 +28,35 @@ export default class PhotoForm extends React.Component {
         this.setState(() => ({imgUrl}));
     };
     onDateChange = (createdAt) => {
-        this.setState(() => ({createdAt}));
+        if (createdAt){
+            this.setState(() => ({createdAt}));
+        }
     };
     onFocusChange = ({focused}) => {
         this.setState(() => ({
             calendarFocused: focused
         }));
     };
+    onSubmit = (e) =>{
+        e.preventDefault();
+        
+        if (!this.state.title || !this.state.imgUrl) {
+            this.setState(() => ({error: 'Please add title and image url to new photo'}))
+        } else {
+            this.setState(() => ({error: false}));
+            this.props.onSubmit({
+                title: this.state.title,
+                description: this.state.description,
+                imgUrl: this.state.imgUrl,
+                createdAt: this.state.createdAt.valueOf()
+            })
+        }
+    }
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.onSubmit}>
+                    { this.state.error && <p>{this.state.error}</p> }
                     <p>
                         <input 
                             type="text"
@@ -62,7 +81,7 @@ export default class PhotoForm extends React.Component {
                             name="Image"
                             placeholder="Image url"
                             value={this.state.imgUrl}
-                            onChange={this.onImgUtlChange}
+                            onChange={this.onImgUrlChange}
                         />
                     </p>
                         <SingleDatePicker
